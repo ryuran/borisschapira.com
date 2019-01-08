@@ -34,6 +34,11 @@ function perfmark(callback, key) {
 })();
 
 ready(function () {
+
+    perfmark(function () {
+      window.initEasyToggleState();
+    }, 'easy_toggle');
+
     (function (abbrTouch) {
 
         var tooltipTimeout;
@@ -129,4 +134,8 @@ ready(function () {
             }
         }
     })();
+
+    perfmark(function () {
+        window.hljs.initHighlighting();
+    }, 'highlightjs');
 });
